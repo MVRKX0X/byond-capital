@@ -39,12 +39,21 @@ async function handleLead(request, env, origin) {
   } catch {
     return json({ error: "Invalid request body." }, 400, origin);
   }
-  const { email, firstName, source, hp } = body || {};
+  const { email, firstName, whatsapp, instagram, source, hp } = body || {};
 
   if (hp) return json({ ok: true }, 200, origin); // honeypot
 
   if (!email || typeof email !== "string" || !email.includes("@")) {
     return json({ error: "A valid email address is required." }, 400, origin);
+  }
+  if (!firstName || typeof firstName !== "string") {
+    return json({ error: "First name is required." }, 400, origin);
+  }
+  if (!whatsapp || typeof whatsapp !== "string" || whatsapp.length < 6) {
+    return json({ error: "A valid WhatsApp number is required." }, 400, origin);
+  }
+  if (!instagram || typeof instagram !== "string") {
+    return json({ error: "Instagram handle is required." }, 400, origin);
   }
 
   const webhook = env.MANYCHAT_WEBHOOK_URL;
@@ -59,7 +68,9 @@ async function handleLead(request, env, origin) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email,
-        first_name: firstName ?? "",
+        first_name: firstName,
+        whatsapp,
+        instagram,
         source: source ?? "website",
         submitted_at: new Date().toISOString(),
       }),
