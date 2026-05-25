@@ -63,6 +63,7 @@ export default function Footer() {
             </Link>
             .
           </p>
+          <p className="mt-2 text-xs text-white/30">{SITE.poweredByNoTilt}.</p>
         </div>
       </div>
     </footer>

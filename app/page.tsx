@@ -1,25 +1,25 @@
 import { Section, Button, Eyebrow } from "@/components/ui";
-import { ALPHA, RISK_SHORT, TESTIMONIALS } from "@/lib/config";
+import { RISK_SHORT, TESTIMONIALS } from "@/lib/config";
 import Link from "next/link";
 
 const OFFERS = [
   {
-    name: "Free ORB Playbook",
-    desc: "Our opening-range breakout method, written up as a free playbook. Start here.",
-    href: "/playbook",
-    cta: "Get the Playbook",
-  },
-  {
     name: "Byond Capital Club",
-    desc: "Community, education library, market analysis and indicator access. From €129/mo.",
+    desc: "Community, education, market analysis and indicators. From €179.99/mo. Quarterly tier includes the live Mentorship.",
     href: "/club",
     cta: "See Membership",
   },
   {
-    name: "Alpha Mentorship",
-    desc: `Premium mentorship — ${ALPHA.price} / ${ALPHA.term}. Direct mentor access and live sessions.`,
-    href: "/alpha-mentorship",
-    cta: "Learn More",
+    name: "Mentorship",
+    desc: "Live trading sessions coached by Mark, plus the full course. Included with the Quarterly Club tier (€499).",
+    href: "/mentorship",
+    cta: "See Mentorship",
+  },
+  {
+    name: "Alpha (1:1)",
+    desc: "Mentorship plus weekly 1:1 calls with Mark. Direct access, application-only.",
+    href: "/alpha",
+    cta: "Apply for Alpha",
   },
 ];
 

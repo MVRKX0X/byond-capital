@@ -1,10 +1,9 @@
 import { Section, Eyebrow } from "@/components/ui";
-import { ALPHA } from "@/lib/config";
 
 export const metadata = {
   title: "Book a Call — Byond Capital",
   description:
-    "Book a short fit call for the Alpha Mentorship Program or to ask about the Byond Capital Club. Calendar syncs in real time.",
+    "Book a discovery call for the Alpha 1:1 mentorship, or ask about the Byond Capital Club. Calendar syncs in real time.",
 };
 
 export default function BookPage() {
@@ -19,11 +18,10 @@ export default function BookPage() {
             Book a call.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
-            Mainly for Alpha Mentorship enquiries ({ALPHA.price} /{" "}
-            {ALPHA.term}). Short, no-pressure fit conversation — bring your
-            questions, we&apos;ll tell you straight whether the program is
-            right for you. Pick a slot that works and it syncs to the
-            calendar in real time.
+            Mainly for Alpha 1:1 mentorship enquiries. Short, no-pressure fit
+            conversation — bring your questions, we&apos;ll tell you straight
+            whether the programme is right for you. Pick a slot that works and
+            it syncs to the calendar in real time.
           </p>
         </Section>
       </div>

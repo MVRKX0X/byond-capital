@@ -5,6 +5,7 @@ export const SITE = {
   domain: "byondcapital.co",
   tagline: "Trading education, built like an institution.",
   contactEmail: "hello@byondcapital.co",
+  poweredByNoTilt: "Course platform powered by No Tilt",
   social: {
     instagram: "https://instagram.com/byondcapital",
     youtube: "",
@@ -15,13 +16,14 @@ export const SITE = {
 export const NAV = [
   { label: "Home", href: "/" },
   { label: "Club", href: "/club" },
-  { label: "Alpha Mentorship", href: "/alpha-mentorship" },
+  { label: "Mentorship", href: "/mentorship" },
+  { label: "Alpha", href: "/alpha" },
   { label: "About", href: "/about" },
   { label: "Results", href: "/results" },
   { label: "Book a Call", href: "/book" },
 ];
 
-// Club tiers — euros only.
+// Club tiers — euros only. Three tiers: Free / Monthly / Quarterly.
 export const CLUB_TIERS = [
   {
     id: "free",
@@ -32,113 +34,108 @@ export const CLUB_TIERS = [
     cta: "Join Free",
     envUrl: "NEXT_PUBLIC_WHOP_FREE_URL",
     featured: false,
+    features: [
+      "Limited Discord access",
+      "Public announcements",
+      "Community vibe check",
+    ],
   },
   {
     id: "monthly",
     name: "Monthly",
-    price: "€129",
+    price: "€179.99",
     cadence: "/ month",
     blurb: "Full community access, education library, market analysis.",
     cta: "Join Monthly",
     envUrl: "NEXT_PUBLIC_WHOP_MONTHLY_URL",
     featured: false,
+    features: [
+      "Full Discord access",
+      "Education library + ORB & RAB course",
+      "Daily market analysis",
+      "Custom indicators",
+    ],
   },
   {
     id: "quarterly",
     name: "Quarterly",
-    price: "€300",
+    price: "€499",
     cadence: "/ quarter",
-    blurb: "Everything in Monthly, billed quarterly.",
+    blurb:
+      "Everything in Monthly, plus the live Mentorship — coached trading sessions with Mark.",
     cta: "Join Quarterly",
     envUrl: "NEXT_PUBLIC_WHOP_QUARTERLY_URL",
-    featured: false,
-  },
-  {
-    id: "annual",
-    name: "Annual",
-    price: "€1,100",
-    cadence: "/ year",
-    blurb: "Best value. Full access for a full year.",
-    cta: "Join Annual",
-    envUrl: "NEXT_PUBLIC_WHOP_ANNUAL_URL",
     featured: true,
-  },
-  {
-    id: "vip",
-    name: "VIP",
-    price: "€199",
-    cadence: "/ month",
-    blurb: "Monthly group call with the team. Capped at 20 members.",
-    cta: "Apply for VIP",
-    envUrl: "NEXT_PUBLIC_WHOP_VIP_URL",
-    featured: false,
-    cap: 20,
+    badge: "Best Value · includes Mentorship",
+    features: [
+      "Everything in Monthly",
+      "Live trading sessions coached by Mark",
+      "Weekly group breakdowns",
+      "Priority support",
+    ],
   },
 ];
 
-export const ALPHA = {
-  price: "€1,750",
-  term: "3 months",
-  monthlyEquivalent: "~€583 / month",
+// Mentorship product (included with Quarterly Club tier).
+export const MENTORSHIP = {
+  name: "Mentorship",
+  included_with: "Quarterly Club tier (€499)",
+  summary:
+    "Live trading sessions coached personally by Mark, alongside the full Byond Capital course library.",
   includes: [
-    "Weekly live sessions on the open",
-    "Direct WhatsApp & voice access to your mentor",
-    "Direct teaching of the ORB and RAB frameworks",
-    "Weekly accountability and progress reviews",
-    "Trade reviews and personalised feedback",
-    "Private mentor-only resources and templates",
+    "Live trading sessions on the open, coached by Mark in real time",
+    "Full access to the ORB and RAB course library",
+    "Group breakdowns of setups and post-session reviews",
+    "Daily market analysis and pre-market notes",
+    "Active Discord community + custom indicators",
+  ],
+  cta: "Join via Quarterly",
+  ctaTier: "quarterly",
+};
+
+// Alpha — application-only, premium 1:1.
+export const ALPHA = {
+  name: "Alpha",
+  applicationOnly: true,
+  summary:
+    "Everything in Mentorship — plus weekly 1:1 private calls with Mark. Direct access. Application-only.",
+  includes: [
+    "Everything in the Mentorship programme",
+    "Weekly 1:1 private call with Mark",
+    "Personalised trade reviews and account planning",
+    "Direct messaging access between sessions",
+    "Custom progress benchmarks and accountability",
   ],
   forYou: [
     "You're committed to treating this like a craft, not a get-rich-quick play",
-    "You can show up consistently for live sessions during the futures open",
-    "You want structure, accountability, and a direct line to a mentor",
+    "You can show up for live sessions during the futures open",
+    "You want direct, weekly access to a mentor — not a group chat",
     "You've done some self-study and are ready to refine, not start from zero",
   ],
   notForYou: [
     "You're looking for signals to copy without learning the method",
     "You want guaranteed returns — this is education, not a managed account",
-    "You can't commit at least a few hours per week to live sessions and homework",
+    "You can't commit time for weekly 1:1 calls and homework",
     "You're not in a position to risk capital responsibly",
   ],
+  cta: "Apply for Alpha",
+  ctaNote:
+    "Application-only. Click apply to book a discovery call — we'll see if it's a fit.",
 };
-
-// Club benefits — what's included across paid tiers.
-export const CLUB_FEATURES = [
-  {
-    title: "Private Discord",
-    desc: "Daily chat, mentor presence, and a focused community of working traders.",
-  },
-  {
-    title: "Education library",
-    desc: "Structured lessons on the ORB and RAB frameworks, risk, and execution.",
-  },
-  {
-    title: "Market analysis",
-    desc: "Pre-market notes and session breakdowns to sharpen your read.",
-  },
-  {
-    title: "Custom indicators",
-    desc: "Access to the in-house indicators built around our frameworks.",
-  },
-  {
-    title: "Live sessions",
-    desc: "Recurring group sessions to walk the open and review setups together.",
-  },
-  {
-    title: "Ongoing support",
-    desc: "A team that actually answers — no faceless signal channel.",
-  },
-];
 
 // FAQ entries — reused on Contact page.
 export const FAQS = [
   {
     q: "How much does it cost?",
-    a: "The Club has a free tier for limited Discord access. Paid tiers start at €129/month, with quarterly (€300) and annual (€1,100) options. The Alpha Mentorship Program is €1,750 for 3 months. All prices are in euros.",
+    a: "The Club has a free tier for limited Discord access. Paid tiers are Monthly at €179.99 and Quarterly at €499 — the Quarterly tier includes the live Mentorship. Alpha is application-only, priced after the discovery call. All prices are in euros.",
+  },
+  {
+    q: "What's the difference between Mentorship and Alpha?",
+    a: "Mentorship is the live trading sessions coached by Mark, plus the course — included with the Quarterly Club tier. Alpha is everything in Mentorship plus a weekly 1:1 private call with Mark. Mentorship is open enrolment; Alpha is application-only.",
   },
   {
     q: "I'm a complete beginner — is this for me?",
-    a: "Yes. The Club is built so beginners can follow a structured path from the basics into the ORB and RAB frameworks. The Alpha Mentorship Program is better suited to traders who already have some screen time and want direct guidance to sharpen execution.",
+    a: "Yes. The Club is built so beginners can follow a structured path from the basics into the ORB and RAB frameworks. Mentorship and Alpha are better suited to traders who already have some screen time and want live coaching to sharpen execution.",
   },
   {
     q: "How much time does it take?",
@@ -154,7 +151,7 @@ export const FAQS = [
   },
   {
     q: "Can I cancel my membership?",
-    a: "Yes. Monthly and quarterly memberships can be cancelled from your Whop account at any time and won't renew at the next billing date. Annual memberships run for the full term. For mentorship cancellations, get in touch directly.",
+    a: "Yes. Monthly and quarterly memberships can be cancelled from your account at any time and won't renew at the next billing date. For Alpha, terms are confirmed on the discovery call.",
   },
   {
     q: "Is this financial advice?",
@@ -172,13 +169,13 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "The ORB sessions changed how I approach the open. Clean rules, no noise, finally a daily routine that holds up.",
-    name: "Member, Alpha",
+      "The live sessions changed how I approach the open. Clean rules, no noise, finally a daily routine that holds up.",
+    name: "Member, Mentorship",
     handle: "",
   },
   {
     quote:
-      "Direct mentor access in Alpha is what made the difference. Every trade I review I learn something.",
+      "Direct 1:1 calls in Alpha is what made the difference. Every trade I review I learn something.",
     name: "Member, Alpha",
     handle: "",
   },
