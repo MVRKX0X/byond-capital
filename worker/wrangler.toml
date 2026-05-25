@@ -1,0 +1,17 @@
+name = "byond-capital-api"
+main = "src/index.js"
+compatibility_date = "2025-05-01"
+
+# Default workers.dev subdomain enabled until custom domain is set up.
+workers_dev = true
+
+# Custom domain route (uncomment after DNS for byondcapital.co is on Cloudflare):
+# routes = [
+#   { pattern = "api.byondcapital.co/*", zone_name = "byondcapital.co" }
+# ]
+
+# Non-secret vars can live here. Secrets (RESEND_API_KEY, MANYCHAT_WEBHOOK_URL,
+# CONTACT_WEBHOOK_URL) must be set via `wrangler secret put` — never committed.
+[vars]
+# CONTACT_TO_EMAIL = "hello@byondcapital.co"
+# CONTACT_FROM_EMAIL = "no-reply@byondcapital.co"

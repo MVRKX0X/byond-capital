@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@300;400;500;600&display=swap');
+
+:root {
+  --font-display: 'Barlow Condensed';
+  --font-body: 'Barlow';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #060C18;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle atmospheric depth — steel-blue radial glow on the navy base. */
+.bg-atmosphere {
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(74, 128, 196, 0.14) 0%, transparent 70%),
+    #060C18;
+}
+
+.text-balance {
+  text-wrap: balance;
+}

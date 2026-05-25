@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /port/
+
+Sitemap: https://byondcapital.co/sitemap.xml

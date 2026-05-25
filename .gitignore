@@ -1,0 +1,28 @@
+# deps
+node_modules/
+worker/node_modules/
+
+# next.js
+.next/
+out/
+
+# env
+.env
+.env.local
+.env*.local
+
+# logs / OS
+.DS_Store
+*.log
+npm-debug.log*
+
+# editors
+.vscode/
+.idea/
+
+# wrangler
+.wrangler/
+.dev.vars
+
+# old express server (replaced by worker)
+server/
