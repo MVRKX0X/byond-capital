@@ -17,17 +17,33 @@ export default function ClubPage() {
           <h1 className="mt-4 font-display text-5xl font-700 leading-[0.95] tracking-tight md:text-6xl text-balance">
             The Byond Capital Club
           </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
-            A community of working traders learning a defined method. Discord
-            access, a full education library, ongoing market analysis, and the
-            in-house indicators built around our frameworks. The Quarterly tier
-            also includes the live{" "}
-            <Link href="/mentorship" className="text-steel-light underline-offset-4 hover:underline">
-              Mentorship
-            </Link>
-            .
-          </p>
-          <p className="mt-3 text-xs text-white/40">
+          <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-white/75">
+            <p>
+              The Byond Capital Club is where the method comes to life. It&apos;s
+              a working community of traders learning, executing, and reviewing
+              the same frameworks together &mdash; backed by a full education
+              library, ongoing market analysis, and access to our custom
+              indicators. This isn&apos;t a signals group you follow blindly;
+              it&apos;s an environment built to make you a better, more
+              independent trader.
+            </p>
+            <p>
+              Inside, you get structured education on the ORB and RAB
+              frameworks, regular breakdowns of live market conditions, and a
+              community of people walking the same path &mdash; all organised
+              so you always know what to study, what to watch, and what to work
+              on next. Membership scales with your commitment, from a free
+              entry tier through to{" "}
+              <Link
+                href="/mentorship"
+                className="text-steel-light underline-offset-4 hover:underline"
+              >
+                Quarterly with live Mentorship
+              </Link>
+              . Institutional-grade structure at a retail price.
+            </p>
+          </div>
+          <p className="mt-4 text-xs text-white/40">
             {SITE.poweredByNoTilt}.
           </p>
         </Section>

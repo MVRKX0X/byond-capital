@@ -99,11 +99,17 @@ export const ALPHA = {
   applicationOnly: true,
   summary:
     "Everything in Mentorship — plus weekly 1:1 private calls with Mark. Direct access. Application-only.",
+  longDescription: [
+    "The Alpha Mentorship Program is the highest-touch way to learn the Byond Capital method — built for traders who are done dabbling and ready to commit to a process. Typically structured around a three-month engagement, you work directly with Mark through live sessions, with WhatsApp and voice access for the moments that matter: a setup you're unsure about, a decision in real time, a habit you need to break.",
+    "This is mentorship in the real sense — accountability, feedback, and direct teaching of the ORB and RAB frameworks until they're genuinely yours. Alpha is intentionally not a shortcut and not a signals service. It's for traders willing to put in the screen time and follow a structured process, with someone in their corner to compress the learning curve and keep them honest.",
+    "If you want to stop trading on instinct and start trading like it's a craft, this is the room. Exact terms are agreed on the discovery call.",
+  ],
   includes: [
     "Everything in the Mentorship programme",
     "Weekly 1:1 private call with Mark",
+    "WhatsApp and voice access between sessions for real-time decisions",
+    "Typically structured as a three-month engagement",
     "Personalised trade reviews and account planning",
-    "Direct messaging access between sessions",
     "Custom progress benchmarks and accountability",
   ],
   forYou: [

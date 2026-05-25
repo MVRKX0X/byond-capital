@@ -24,9 +24,14 @@ export default function AlphaPage() {
           <h1 className="mt-4 font-display text-5xl font-700 leading-[0.95] tracking-tight md:text-6xl text-balance">
             Direct access. Weekly 1:1 with Mark.
           </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/80">
             {ALPHA.summary}
           </p>
+          <div className="mt-6 max-w-3xl space-y-4 leading-relaxed text-white/70">
+            {ALPHA.longDescription.map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/book"

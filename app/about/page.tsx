@@ -25,11 +25,55 @@ export default function AboutPage() {
     <>
       <div className="bg-atmosphere">
         <Section className="py-20 md:py-24">
-          <Eyebrow>The Story</Eyebrow>
+          <Eyebrow>Byond Capital</Eyebrow>
           <h1 className="mt-4 font-display text-5xl font-700 leading-[0.95] tracking-tight md:text-6xl text-balance">
-            From the chair to the charts.
+            Beyond signals. Beyond noise.
+            <br />
+            <span className="text-steel">Beyond guesswork.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
+          <div className="mt-7 max-w-3xl space-y-5 text-lg leading-relaxed text-white/75">
+            <p>
+              Byond Capital is a professional trading-education brand built on
+              a simple conviction: most retail traders don&apos;t lose because
+              they lack effort &mdash; they lose because they lack structure.
+              We exist to fix that.
+            </p>
+            <p>
+              Through our proprietary{" "}
+              <span className="text-white">ORB</span> (Opening Range Breakout)
+              and <span className="text-white">RAB</span> (Range Absorption
+              Breakout) frameworks, we teach traders a clean, rules-based
+              approach to the futures market &mdash; defined entries, defined
+              risk, and a repeatable daily process. No order blocks, no fair
+              value gaps, no acronym soup. Just a method you can actually
+              execute.
+            </p>
+            <p>
+              What sets Byond Capital apart is the standard we hold ourselves
+              to. We approach retail education with{" "}
+              <span className="text-steel-light">institutional discipline</span>{" "}
+              &mdash; the kind of structure, accountability, and process
+              you&apos;d expect from a desk, made accessible to the
+              self-employed trader building a skill around an existing life.
+            </p>
+            <p>
+              Whether you start with our free playbook, join the Club, or step
+              into mentorship, the goal is the same: to take you beyond
+              signals, beyond noise, and beyond guesswork &mdash; to a way of
+              trading you understand and own.
+            </p>
+          </div>
+        </Section>
+      </div>
+
+      {/* Founder story */}
+      <div className="border-t border-white/10">
+        <Section className="py-16 md:py-20">
+          <Eyebrow>The Story</Eyebrow>
+          <h2 className="mt-3 font-display text-4xl font-700 md:text-5xl">
+            From the chair to the charts.
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
             Byond Capital was started by a founder who built a serious business
             in the hair &amp; beauty industry before turning that same operator
             mindset on the markets.
