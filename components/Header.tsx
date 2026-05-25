@@ -12,10 +12,20 @@ export default function Header() {
       <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="font-display text-2xl font-700 tracking-wide"
+          className="flex items-center gap-2.5 font-display text-2xl font-700 tracking-wide"
           onClick={() => setOpen(false)}
+          aria-label="Byond Capital home"
         >
-          BYOND <span className="text-steel">CAPITAL</span>
+          <img
+            src="/logo-mark.png"
+            alt=""
+            width={36}
+            height={36}
+            className="h-9 w-9 rounded-md object-cover"
+          />
+          <span>
+            BYOND <span className="text-steel">CAPITAL</span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">

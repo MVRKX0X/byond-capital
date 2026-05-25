@@ -9,12 +9,33 @@ export const metadata: Metadata = {
   title: `${SITE.name} — ${SITE.tagline}`,
   description:
     "Byond Capital is a professional trading-education brand. Join the Club, follow the ORB and RAB frameworks, and learn to trade with structure.",
+  icons: {
+    icon: [
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo-mark.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: `${SITE.name} — ${SITE.tagline}`,
     description: "Professional trading education. Join the Byond Capital Club.",
     url: `https://${SITE.domain}`,
     siteName: SITE.name,
     type: "website",
+    images: [
+      {
+        url: `https://${SITE.domain}/og-image.jpg`,
+        width: 1536,
+        height: 1024,
+        alt: "Byond Capital",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE.name} — ${SITE.tagline}`,
+    description: "Professional trading education. Join the Byond Capital Club.",
+    images: [`https://${SITE.domain}/og-image.jpg`],
   },
 };
 

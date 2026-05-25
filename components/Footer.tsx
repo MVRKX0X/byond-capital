@@ -7,8 +7,17 @@ export default function Footer() {
       <div className="mx-auto max-w-content px-6 py-12">
         <div className="flex flex-col justify-between gap-10 md:flex-row">
           <div className="max-w-sm">
-            <div className="font-display text-xl font-700 tracking-wide">
-              BYOND <span className="text-steel">CAPITAL</span>
+            <div className="flex items-center gap-2.5 font-display text-xl font-700 tracking-wide">
+              <img
+                src="/logo-mark.png"
+                alt=""
+                width={32}
+                height={32}
+                className="h-8 w-8 rounded-md object-cover"
+              />
+              <span>
+                BYOND <span className="text-steel">CAPITAL</span>
+              </span>
             </div>
             <p className="mt-2 text-sm text-white/50">{SITE.tagline}</p>
             <div className="mt-5 flex items-center gap-3">
