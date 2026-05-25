@@ -69,6 +69,7 @@ export const CLUB_TIERS = [
     badge: "Best Value · includes Mentorship",
     features: [
       "Everything in Monthly",
+      "20-minute personal onboarding call to get you set up",
       "Live trading sessions coached by Mark",
       "Weekly group breakdowns",
       "Priority support",
@@ -83,6 +84,7 @@ export const MENTORSHIP = {
   summary:
     "Live trading sessions coached personally by Mark, alongside the full Byond Capital course library.",
   includes: [
+    "20-minute personal onboarding call to get you set up and oriented",
     "Live trading sessions on the open, coached by Mark in real time",
     "Full access to the ORB and RAB course library",
     "Group breakdowns of setups and post-session reviews",
