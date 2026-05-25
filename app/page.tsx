@@ -26,22 +26,30 @@ const OFFERS = [
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <div className="bg-atmosphere">
-        <Section className="py-24 md:py-32">
-          <div className="max-w-3xl">
+      {/* Hero — the eye-catcher */}
+      <div className="bg-atmosphere relative overflow-hidden">
+        {/* Subtle radial accent */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-50"
+          style={{
+            background:
+              "radial-gradient(ellipse at 70% 30%, rgba(74,128,196,0.18), transparent 55%)",
+          }}
+        />
+        <Section className="relative py-28 md:py-40">
+          <div className="max-w-4xl">
             <Eyebrow>The Trader&apos;s Education Brand</Eyebrow>
-            <h1 className="mt-5 font-display text-5xl font-700 leading-[0.95] tracking-tight text-balance md:text-7xl">
+            <h1 className="mt-6 font-display text-6xl font-700 leading-[0.95] tracking-tight text-balance md:text-8xl">
               Trade with structure.
               <br />
               <span className="text-steel">Not with guesswork.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
-              Byond Capital teaches the proprietary ORB and RAB frameworks — a
-              clean, rules-based approach to trading the futures open. No jargon.
-              No noise. Just structure.
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-white/70 md:text-xl">
+              Institutional discipline. Retail price. A method you can actually
+              execute.
             </p>
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
               <Button href="/playbook">Get the Free Playbook</Button>
               <Button href="/book" variant="ghost">
                 Book a Call
@@ -50,6 +58,55 @@ export default function Home() {
           </div>
         </Section>
       </div>
+
+      {/* About Byond Capital — descriptive section right below hero */}
+      <Section className="py-20 md:py-24">
+        <div className="grid gap-12 md:grid-cols-[1fr_1.3fr] md:items-start md:gap-16">
+          <div>
+            <Eyebrow>About Byond Capital</Eyebrow>
+            <h2 className="mt-3 font-display text-4xl font-700 leading-tight md:text-5xl">
+              Beyond signals.
+              <br />
+              Beyond noise.
+              <br />
+              <span className="text-steel">Beyond guesswork.</span>
+            </h2>
+          </div>
+          <div className="space-y-5 text-lg leading-relaxed text-white/75">
+            <p>
+              Byond Capital is a professional trading-education brand built on a
+              simple conviction: most retail traders don&apos;t lose because
+              they lack effort — they lose because they lack structure. We
+              exist to fix that.
+            </p>
+            <p>
+              Through our proprietary{" "}
+              <span className="text-white">ORB</span> (Opening Range Breakout)
+              and <span className="text-white">RAB</span> (Range Absorption
+              Breakout) frameworks, we teach traders a clean, rules-based
+              approach to the futures market — defined entries, defined risk,
+              and a repeatable daily process. No order blocks, no fair value
+              gaps, no acronym soup. Just a method you can actually execute.
+            </p>
+            <p>
+              We approach retail education with{" "}
+              <span className="text-steel-light">institutional discipline</span>{" "}
+              — the kind of structure, accountability, and process you&apos;d
+              expect from a desk, made accessible to the self-employed trader
+              building a skill around an existing life.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-sm font-600 text-steel-light hover:text-steel"
+              >
+                Read more about us
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </Section>
 
       {/* Trust bar */}
       <div className="border-y border-white/10 bg-navy-800">
