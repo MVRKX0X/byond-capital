@@ -8,13 +8,6 @@ export const metadata = {
     "Join the Byond Capital Club. Community, education, market analysis and the live Mentorship. From €179.99/month.",
 };
 
-// Wire each tier to its checkout URL via env var. Falls back to "#" until configured.
-const CHECKOUT_URLS: Record<string, string | undefined> = {
-  free: process.env.NEXT_PUBLIC_WHOP_FREE_URL,
-  monthly: process.env.NEXT_PUBLIC_WHOP_MONTHLY_URL,
-  quarterly: process.env.NEXT_PUBLIC_WHOP_QUARTERLY_URL,
-};
-
 export default function ClubPage() {
   return (
     <>
@@ -44,8 +37,8 @@ export default function ClubPage() {
       <Section className="py-16">
         <div className="grid gap-6 md:grid-cols-3">
           {CLUB_TIERS.map((tier) => {
-            const url = CHECKOUT_URLS[tier.id] || "#";
-            const ctaDisabled = url === "#";
+            const url = tier.url || "#";
+            const ctaDisabled = !tier.url;
             return (
               <div
                 key={tier.id}

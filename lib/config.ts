@@ -32,7 +32,7 @@ export const CLUB_TIERS = [
     cadence: "",
     blurb: "Limited Discord access. Your entry into the community.",
     cta: "Join Free",
-    envUrl: "NEXT_PUBLIC_WHOP_FREE_URL",
+    url: "", // TBD — user is still creating the free-tier checkout
     featured: false,
     features: [
       "Limited Discord access",
@@ -47,7 +47,7 @@ export const CLUB_TIERS = [
     cadence: "/ month",
     blurb: "Full community access, education library, market analysis.",
     cta: "Join Monthly",
-    envUrl: "NEXT_PUBLIC_WHOP_MONTHLY_URL",
+    url: "https://notilt.co/#/c/byond/checkout/6",
     featured: false,
     features: [
       "Full Discord access",
@@ -64,7 +64,7 @@ export const CLUB_TIERS = [
     blurb:
       "Everything in Monthly, plus the live Mentorship — coached trading sessions with Mark.",
     cta: "Join Quarterly",
-    envUrl: "NEXT_PUBLIC_WHOP_QUARTERLY_URL",
+    url: "https://notilt.co/#/c/byond/checkout/2",
     featured: true,
     badge: "Best Value · includes Mentorship",
     features: [

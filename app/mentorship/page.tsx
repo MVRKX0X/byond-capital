@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Section, Eyebrow } from "@/components/ui";
-import { MENTORSHIP, RISK_SHORT, SITE } from "@/lib/config";
+import { MENTORSHIP, RISK_SHORT, SITE, CLUB_TIERS } from "@/lib/config";
 
 export const metadata = {
   title: "Mentorship — Byond Capital",
@@ -8,11 +8,11 @@ export const metadata = {
     "Live trading sessions coached personally by Mark, plus the full Byond Capital course library. Included with the Quarterly Club tier (€499).",
 };
 
-const QUARTERLY_URL = process.env.NEXT_PUBLIC_WHOP_QUARTERLY_URL;
+const QUARTERLY_URL = CLUB_TIERS.find((t) => t.id === "quarterly")?.url || "";
 
 export default function MentorshipPage() {
   const url = QUARTERLY_URL || "#";
-  const ctaDisabled = url === "#";
+  const ctaDisabled = !QUARTERLY_URL;
 
   return (
     <>
