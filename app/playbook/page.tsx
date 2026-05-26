@@ -15,6 +15,9 @@ export default function PlaybookPage() {
     "idle"
   );
   const [error, setError] = useState<string>("");
+  const [downloadUrl, setDownloadUrl] = useState<string>(
+    "/downloads/byond-capital-orb-playbook.pdf"
+  );
 
   // Normalise Instagram handle: strip @, URL prefixes, trailing slashes.
   function normaliseInstagram(input: string): string {
@@ -48,11 +51,23 @@ export default function PlaybookPage() {
           hp: honeypot,
         }),
       });
+      const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
         throw new Error(data.error || "Something went wrong");
       }
+      if (typeof data.download_url === "string" && data.download_url.startsWith("/")) {
+        setDownloadUrl(data.download_url);
+      }
       setStatus("done");
+      // Auto-trigger download after a short delay so the success copy reads first.
+      setTimeout(() => {
+        const link = document.createElement("a");
+        link.href = data.download_url || "/downloads/byond-capital-orb-playbook.pdf";
+        link.download = "Byond-Capital-ORB-Playbook.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }, 600);
     } catch (err) {
       setStatus("error");
       setError(err instanceof Error ? err.message : "Something went wrong");
@@ -70,8 +85,8 @@ export default function PlaybookPage() {
           <p className="mt-5 text-white/70 leading-relaxed">
             The Opening Range Breakout, written up plainly. The setup, the
             rules, the entries, the stops, the targets — the way we actually
-            trade it. Fill in your details and we&apos;ll send the playbook
-            straight to you on Instagram, WhatsApp, and email.
+            trade it. Fill in your details and your download starts
+            instantly.
           </p>
 
           {status === "done" ? (
@@ -80,12 +95,20 @@ export default function PlaybookPage() {
                 You&apos;re in, {firstName}.
               </h2>
               <p className="mt-2 text-sm text-white/70">
-                Watch your Instagram DMs, WhatsApp, and inbox — the ORB
-                Playbook is on its way to {email} and @{instagram}.
+                Your download should start automatically. If it doesn&apos;t,
+                tap the button below.
               </p>
-              <p className="mt-3 text-xs text-white/50">
-                Didn&apos;t hit your inbox? Check spam, or reply to the
-                Instagram DM and we&apos;ll resend.
+              <a
+                href={downloadUrl}
+                download="Byond-Capital-ORB-Playbook.pdf"
+                className="mt-5 inline-flex w-full items-center justify-center rounded-md bg-steel px-6 py-3 font-600 text-white transition-colors hover:bg-steel-dark"
+              >
+                Download the ORB Playbook (PDF)
+              </a>
+              <p className="mt-4 text-xs text-white/50">
+                We&apos;ve also saved your details. Expect occasional setups,
+                playbooks, and Club drops via email and WhatsApp. Unsubscribe
+                anytime.
               </p>
             </div>
           ) : (
@@ -172,8 +195,8 @@ export default function PlaybookPage() {
               )}
               <p className="text-xs text-white/40">
                 By submitting, you agree to receive the ORB Playbook and
-                educational content from Byond Capital across Instagram, email,
-                and WhatsApp. Unsubscribe anytime.
+                occasional educational content from Byond Capital via email and
+                WhatsApp. Unsubscribe anytime.
               </p>
             </form>
           )}

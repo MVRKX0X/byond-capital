@@ -10,8 +10,16 @@ workers_dev = true
 #   { pattern = "api.byondcapital.co/*", zone_name = "byondcapital.co" }
 # ]
 
-# Non-secret vars can live here. Secrets (RESEND_API_KEY, MANYCHAT_WEBHOOK_URL,
-# CONTACT_WEBHOOK_URL) must be set via `wrangler secret put` — never committed.
+# Non-secret vars can live here. Secrets (RESEND_API_KEY, CONTACT_WEBHOOK_URL,
+# ADMIN_TOKEN) must be set via `wrangler secret put` — never committed.
 [vars]
 # CONTACT_TO_EMAIL = "hello@byondcapital.co"
 # CONTACT_FROM_EMAIL = "no-reply@byondcapital.co"
+
+# D1 database binding — stores all leads + contact submissions.
+# Run schema.sql against it once after creation:
+#   npx wrangler d1 execute byond-capital-leads --remote --file=./schema.sql
+[[d1_databases]]
+binding = "DB"
+database_name = "byond-capital-leads"
+database_id = "a675526c-eeb6-4a6d-9e14-55788b38823b"
