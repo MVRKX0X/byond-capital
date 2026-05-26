@@ -82,11 +82,12 @@ export default function Home() {
             <p>
               Through our proprietary{" "}
               <span className="text-white">ORB</span> (Opening Range Breakout)
-              and <span className="text-white">RAB</span> (Range Absorption
+              and <span className="text-white">IBB</span> (Initial Balance
               Breakout) frameworks, we teach traders a clean, rules-based
-              approach to the futures market — defined entries, defined risk,
+              approach to NQ &amp; MNQ futures — defined entries, defined risk,
               and a repeatable daily process. No order blocks, no fair value
-              gaps, no acronym soup. Just a method you can actually execute.
+              gaps, no recycled ICT theory. Just a method you can actually
+              execute.
             </p>
             <p>
               We approach retail education with{" "}
@@ -113,7 +114,7 @@ export default function Home() {
         <Section className="flex flex-wrap items-center justify-around gap-8 py-8 text-center">
           {[
             ["Community", "Active members across Discord"],
-            ["Frameworks", "Proprietary ORB & RAB methods"],
+            ["Frameworks", "Proprietary ORB & IBB methods"],
             ["Approach", "Education-first, structure-led"],
           ].map(([k, v]) => (
             <div key={k}>
@@ -159,13 +160,14 @@ export default function Home() {
           <div className="grid gap-12 md:grid-cols-2">
             <div>
               <Eyebrow>The Method</Eyebrow>
-              <h2 className="mt-3 font-display text-4xl font-700">ORB &amp; RAB</h2>
+              <h2 className="mt-3 font-display text-4xl font-700">ORB &amp; IBB</h2>
               <p className="mt-4 leading-relaxed text-white/70">
-                Two frameworks, built in-house. The Opening Range Breakout (ORB)
-                trades momentum out of the session open. The Range Absorption
-                Breakout (RAB) reads where the range gets defended before it
-                breaks. Both are rules-based and teachable — no order blocks, no
-                fair value gaps, no acronym soup.
+                Two frameworks, built in-house, traded live on NQ &amp; MNQ
+                futures. The Opening Range Breakout (ORB) trades momentum out
+                of the session open. The Initial Balance Breakout (IBB) reads
+                where the market absorbs orders before expanding. Both are
+                rules-based and teachable — no order blocks, no fair value gaps,
+                no recycled ICT theory.
               </p>
               <div className="mt-7">
                 <Button href="/about" variant="ghost">

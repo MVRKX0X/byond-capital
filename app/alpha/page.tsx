@@ -32,23 +32,79 @@ export default function AlphaPage() {
               <p key={i}>{para}</p>
             ))}
           </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/book"
-              className="rounded-md bg-steel px-5 py-3 text-sm font-600 text-white transition-colors hover:bg-steel-dark"
-            >
-              {ALPHA.cta}
-            </Link>
-            <Link
-              href="/mentorship"
-              className="rounded-md border border-white/20 px-5 py-3 text-sm font-600 transition-colors hover:border-steel hover:text-steel-light"
-            >
-              See Mentorship
-            </Link>
+          <div className="mt-8 flex flex-wrap items-end gap-6">
+            <div>
+              <p className="text-xs uppercase tracking-wide text-white/40">Investment</p>
+              <p className="mt-1 font-display text-4xl font-700 leading-none text-white md:text-5xl">
+                {ALPHA.price}
+              </p>
+              <p className="mt-2 text-xs text-white/50">{ALPHA.priceCadence}</p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/book"
+                className="rounded-md bg-steel px-5 py-3 text-sm font-600 text-white transition-colors hover:bg-steel-dark"
+              >
+                {ALPHA.cta}
+              </Link>
+              <Link
+                href="/mentorship"
+                className="rounded-md border border-white/20 px-5 py-3 text-sm font-600 transition-colors hover:border-steel hover:text-steel-light"
+              >
+                See Mentorship
+              </Link>
+            </div>
           </div>
           <p className="mt-3 text-xs text-white/40">
             {ALPHA.ctaNote}
           </p>
+        </Section>
+      </div>
+
+      {/* What you'll achieve */}
+      <Section className="py-20">
+        <Eyebrow>What you'll achieve</Eyebrow>
+        <h2 className="mt-3 font-display text-3xl font-700 md:text-4xl">
+          Outcomes — not promises.
+        </h2>
+        <p className="mt-4 max-w-2xl text-white/60">
+          Alpha is structured around real, measurable outcomes you build over the engagement. Nothing here is guaranteed — markets aren't — but these are the targets we work toward together.
+        </p>
+        <ul className="mt-10 grid gap-4 md:grid-cols-2">
+          {ALPHA.achievements.map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-3 rounded-xl border border-white/10 bg-navy-800 p-5"
+            >
+              <span aria-hidden className="mt-1 text-steel-light">→</span>
+              <span className="text-sm leading-relaxed text-white/80">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      {/* Direct access — 1:1 detail */}
+      <div className="border-y border-white/10 bg-navy-800">
+        <Section className="py-20">
+          <Eyebrow>The direct line</Eyebrow>
+          <h2 className="mt-3 font-display text-3xl font-700 md:text-4xl">
+            What "1-on-1" actually means.
+          </h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {ALPHA.oneOnOneDetail.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-xl border border-steel/30 bg-navy-700 p-6"
+              >
+                <h3 className="font-display text-xl font-700 text-steel-light">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/70">
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
         </Section>
       </div>
 

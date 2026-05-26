@@ -4,7 +4,7 @@ import { RISK_SHORT } from "@/lib/config";
 export const metadata = {
   title: "About — Byond Capital",
   description:
-    "The founder story, the trading philosophy, and the proprietary ORB and RAB frameworks behind Byond Capital.",
+    "The founder story, the trading philosophy, and the proprietary ORB and IBB frameworks behind Byond Capital.",
 };
 
 const FRAMEWORKS = [
@@ -14,9 +14,9 @@ const FRAMEWORKS = [
     desc: "Trade momentum out of the session open. Define the opening range, wait for the break, and execute against a rules-based template with defined risk. Built for the first hour of the futures session, where intent is clearest.",
   },
   {
-    short: "RAB",
-    name: "Range Absorption Breakout",
-    desc: "Read where price is being defended inside a range and trade the break of that level once absorption is confirmed. A patience-led complement to ORB for the days the open doesn't trend.",
+    short: "IBB",
+    name: "Initial Balance Breakout",
+    desc: "Read where the market absorbs orders inside the initial balance, then trade the break of that level once absorption is confirmed. A patience-led complement to ORB for the days the open doesn't trend cleanly.",
   },
 ];
 
@@ -41,12 +41,12 @@ export default function AboutPage() {
             <p>
               Through our proprietary{" "}
               <span className="text-white">ORB</span> (Opening Range Breakout)
-              and <span className="text-white">RAB</span> (Range Absorption
+              and <span className="text-white">IBB</span> (Initial Balance
               Breakout) frameworks, we teach traders a clean, rules-based
               approach to the futures market &mdash; defined entries, defined
               risk, and a repeatable daily process. No order blocks, no fair
-              value gaps, no acronym soup. Just a method you can actually
-              execute.
+              value gaps, no recycled ICT theory. Just a method you can
+              actually execute.
             </p>
             <p>
               What sets Byond Capital apart is the standard we hold ourselves
@@ -100,7 +100,7 @@ export default function AboutPage() {
             </p>
             <p>
               Byond Capital is that approach, packaged as an education brand.
-              Two proprietary frameworks &mdash; ORB and RAB &mdash; taught in
+              Two proprietary frameworks &mdash; ORB and IBB &mdash; taught in
               plain language, without the acronym soup. A community that
               learns one method properly instead of chasing every new style.
             </p>

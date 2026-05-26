@@ -5,7 +5,7 @@ import ContactForm from "./ContactForm";
 export const metadata = {
   title: "Contact & FAQ — Byond Capital",
   description:
-    "Frequently asked questions and a direct contact form. Get answers about the Club, Mentorship, Alpha, and the ORB / RAB frameworks.",
+    "Frequently asked questions and a direct contact form. Get answers about the Club, Mentorship, Alpha, and the ORB / IBB frameworks.",
 };
 
 export default function ContactPage() {

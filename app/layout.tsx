@@ -8,7 +8,7 @@ import MetaPixel from "@/components/MetaPixel";
 export const metadata: Metadata = {
   title: `${SITE.name} — ${SITE.tagline}`,
   description:
-    "Byond Capital is a professional trading-education brand. Join the Club, follow the ORB and RAB frameworks, and learn to trade with structure.",
+    "Byond Capital is a professional trading-education brand. Join the Club, follow the ORB and IBB frameworks, and learn to trade with structure.",
   icons: {
     icon: [
       { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },

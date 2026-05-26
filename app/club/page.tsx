@@ -28,7 +28,7 @@ export default function ClubPage() {
               independent trader.
             </p>
             <p>
-              Inside, you get structured education on the ORB and RAB
+              Inside, you get structured education on the ORB and IBB
               frameworks, regular breakdowns of live market conditions, and a
               community of people walking the same path &mdash; all organised
               so you always know what to study, what to watch, and what to work
