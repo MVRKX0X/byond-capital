@@ -41,6 +41,24 @@ function getClientMeta(request) {
   };
 }
 
+// Fire-and-forget POST to GoHighLevel Inbound Webhook.
+// Returns a Promise; pass to ctx.waitUntil so it never blocks the user response.
+async function forwardToGHL(env, payload) {
+  if (!env.GHL_WEBHOOK_URL) return;
+  try {
+    const res = await fetch(env.GHL_WEBHOOK_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) {
+      console.error("[ghl] forward failed", res.status, await res.text());
+    }
+  } catch (err) {
+    console.error("[ghl] forward error", err);
+  }
+}
+
 function escapeCsv(value) {
   if (value === null || value === undefined) return "";
   const s = String(value);
@@ -50,7 +68,7 @@ function escapeCsv(value) {
   return s;
 }
 
-async function handleLead(request, env, origin) {
+async function handleLead(request, env, ctx, origin) {
   let body;
   try {
     body = await request.json();
@@ -118,6 +136,23 @@ async function handleLead(request, env, origin) {
     );
   }
 
+  // Fire-and-forget: push to GHL pipeline. Doesn't block user response.
+  if (ctx && env.GHL_WEBHOOK_URL) {
+    ctx.waitUntil(
+      forwardToGHL(env, {
+        first_name: cleanFirstName,
+        email: cleanEmail,
+        phone: cleanWhatsapp,
+        whatsapp: cleanWhatsapp,
+        instagram: cleanInstagram,
+        source: cleanSource,
+        tag: `byond-${cleanSource}`,
+        country: meta.country,
+        submitted_at: new Date().toISOString(),
+      })
+    );
+  }
+
   // Return signed-ish download URL (the PDF is public, but we return it
   // explicitly so the client only reveals it after a successful submit).
   return json(
@@ -130,7 +165,7 @@ async function handleLead(request, env, origin) {
   );
 }
 
-async function handleContact(request, env, origin) {
+async function handleContact(request, env, ctx, origin) {
   let body;
   try {
     body = await request.json();
@@ -162,6 +197,21 @@ async function handleContact(request, env, origin) {
   const cleanEmail = email.trim().toLowerCase().slice(0, 200);
   const cleanMessage = message.trim().slice(0, 5000);
   const meta = getClientMeta(request);
+
+  // Fire-and-forget: push contact to GHL pipeline.
+  if (ctx && env.GHL_WEBHOOK_URL) {
+    ctx.waitUntil(
+      forwardToGHL(env, {
+        first_name: cleanName,
+        email: cleanEmail,
+        message: cleanMessage,
+        source: "contact-form",
+        tag: "byond-contact-form",
+        country: meta.country,
+        submitted_at: new Date().toISOString(),
+      })
+    );
+  }
 
   // Always persist to D1
   if (env.DB) {
@@ -344,7 +394,7 @@ async function handleLeadsSummary(request, env, origin) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const origin = request.headers.get("Origin") || "";
 
@@ -357,11 +407,11 @@ export default {
     }
 
     if (url.pathname === "/api/lead" && request.method === "POST") {
-      return handleLead(request, env, origin);
+      return handleLead(request, env, ctx, origin);
     }
 
     if (url.pathname === "/api/contact" && request.method === "POST") {
-      return handleContact(request, env, origin);
+      return handleContact(request, env, ctx, origin);
     }
 
     if (url.pathname === "/api/admin/leads.csv" && request.method === "GET") {
