@@ -3,9 +3,9 @@ import { Section, Eyebrow } from "@/components/ui";
 import { ALPHA, RISK_SHORT, SITE } from "@/lib/config";
 
 export const metadata = {
-  title: "Alpha — Application-only mentorship — Byond Capital",
+  title: "Alpha — Private 1:1 mentorship — Byond Capital",
   description:
-    "Alpha is everything in the Mentorship plus weekly 1:1 private calls with Mark. Direct access, application-only. Book a discovery call to see if it's a fit.",
+    "Alpha is everything in the Mentorship plus weekly 1:1 private calls with Mark. Reserved for active Mentorship members — offered privately, not advertised externally.",
 };
 
 export default function AlphaPage() {
@@ -18,7 +18,7 @@ export default function AlphaPage() {
             <Eyebrow>Alpha</Eyebrow>
             <span className="inline-flex items-center gap-2 rounded-full border border-steel/50 bg-steel/10 px-3 py-1 text-xs font-600 uppercase tracking-wide text-steel-light">
               <span className="h-1.5 w-1.5 rounded-full bg-steel animate-pulse" />
-              Application-only
+              Members-only
             </span>
           </div>
           <h1 className="mt-4 font-display text-5xl font-700 leading-[0.95] tracking-tight md:text-6xl text-balance">
@@ -32,32 +32,22 @@ export default function AlphaPage() {
               <p key={i}>{para}</p>
             ))}
           </div>
-          <div className="mt-8 flex flex-wrap items-end gap-6">
-            <div>
-              <p className="text-xs uppercase tracking-wide text-white/40">Investment</p>
-              <p className="mt-1 font-display text-4xl font-700 leading-none text-white md:text-5xl">
-                {ALPHA.price}
-              </p>
-              <p className="mt-2 text-xs text-white/50">{ALPHA.priceCadence}</p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/book"
-                className="rounded-md bg-steel px-5 py-3 text-sm font-600 text-white transition-colors hover:bg-steel-dark"
-              >
-                {ALPHA.cta}
-              </Link>
+          <div className="mt-10 max-w-2xl rounded-xl border border-steel/40 bg-navy-800/60 p-6">
+            <p className="text-xs font-600 uppercase tracking-wide text-steel-light">
+              How to access Alpha
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-white/80">
+              {ALPHA.ctaNote}
+            </p>
+            <div className="mt-5">
               <Link
                 href="/mentorship"
-                className="rounded-md border border-white/20 px-5 py-3 text-sm font-600 transition-colors hover:border-steel hover:text-steel-light"
+                className="inline-flex rounded-md bg-steel px-5 py-3 text-sm font-600 text-white transition-colors hover:bg-steel-dark"
               >
-                See Mentorship
+                Start with Mentorship
               </Link>
             </div>
           </div>
-          <p className="mt-3 text-xs text-white/40">
-            {ALPHA.ctaNote}
-          </p>
         </Section>
       </div>
 
@@ -193,28 +183,28 @@ export default function AlphaPage() {
         </Section>
       </div>
 
-      {/* How application works */}
+      {/* How it works */}
       <Section className="py-20">
         <Eyebrow>How it works</Eyebrow>
         <h2 className="mt-3 font-display text-3xl font-700 md:text-4xl">
-          Application, then a conversation.
+          The path into Alpha.
         </h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {[
             {
               n: "01",
-              t: "Book a discovery call",
-              d: "Pick a time on Calendly. Free, 20–30 minutes, no pressure.",
+              t: "Join the Mentorship",
+              d: "Start with the Monthly (€179.99) or Quarterly (€499) Club plan. The Quarterly plan includes Mentorship by default.",
             },
             {
               n: "02",
-              t: "Talk it through",
-              d: "We discuss your trading background, goals, and whether Alpha is the right move right now.",
+              t: "Show up & put in screen time",
+              d: "Trade the live sessions, work the course, post your charts in the Discord. We see who's serious.",
             },
             {
               n: "03",
-              t: "Decide together",
-              d: "If it's a fit, we onboard you. If not, you'll leave with a clear next step — usually the Club or Mentorship.",
+              t: "Get invited",
+              d: "When Mark spots a trader ready for 1-on-1 work, the Alpha conversation happens privately — inside the programme.",
             },
           ].map((s) => (
             <div
@@ -238,24 +228,23 @@ export default function AlphaPage() {
         <Section className="py-16">
           <div className="rounded-2xl border border-steel/40 bg-navy-700 p-8 text-center md:p-12">
             <h2 className="font-display text-3xl font-700 md:text-4xl">
-              Ready for direct access?
+              Start with Mentorship.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-white/70">
-              If you're serious about taking this from hobby to craft, book a
-              discovery call. We'll see if Alpha is the right move.
+              Alpha isn't sold publicly — it's offered to traders already inside the programme. Join the Mentorship, do the work, and the conversation will find you.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
               <Link
-                href="/book"
+                href="/mentorship"
                 className="rounded-md bg-steel px-5 py-3 text-sm font-600 text-white transition-colors hover:bg-steel-dark"
               >
-                Book a discovery call
+                See Mentorship
               </Link>
               <Link
                 href="/club"
                 className="rounded-md border border-white/20 px-5 py-3 text-sm font-600 transition-colors hover:border-steel hover:text-steel-light"
               >
-                Not yet — see Club
+                Compare Club tiers
               </Link>
             </div>
             <p className="mt-4 text-xs text-white/40">

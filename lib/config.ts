@@ -90,7 +90,6 @@ export const NAV = [
   { label: "Alpha", href: "/alpha" },
   { label: "About", href: "/about" },
   { label: "Results", href: "/results" },
-  { label: "Book a Call", href: "/book" },
 ];
 
 // Club tiers — euros only. Three tiers: Free / Monthly / Quarterly.
@@ -175,7 +174,7 @@ export const ALPHA = {
   applicationOnly: true,
   price: "£1,750",
   priceCadence: "3-month initial term · renewable monthly thereafter",
-  priceNote: "Application-only — your fit is confirmed on the discovery call.",
+  priceNote: "Members-only — terms are confirmed privately inside the Mentorship.",
   tagline: "Direct access. Real results. No gatekeepers, no delays — no matter where you are or when you trade.",
   summary:
     "Everything in Mentorship — plus direct WhatsApp access, a weekly 1:1 with Mark, and a tailored framework built around your goals.",
@@ -229,16 +228,18 @@ export const ALPHA = {
     "You can't commit time for weekly 1:1 calls and homework",
     "You're not in a position to risk capital responsibly",
   ],
-  cta: "Apply for Alpha",
+  // Alpha is internally invited only — reserved for active Mentorship members.
+  // No public CTA, no booking, no application form on the site.
+  cta: null,
   ctaNote:
-    "Application-only. Click apply to book a discovery call — we'll confirm fit and exact terms.",
+    "Alpha is reserved for active Mentorship members. Join the Mentorship first — we'll discuss Alpha with you directly once you're in.",
 };
 
 // FAQ entries — reused on Contact page.
 export const FAQS = [
   {
     q: "How much does it cost?",
-    a: "The Club has a free tier for limited Discord access. Paid tiers are Monthly at €179.99 and Quarterly at €499 — the Quarterly tier includes the live Mentorship. Alpha is application-only, priced after the discovery call. All prices are in euros.",
+    a: "The Club has a free tier for limited Discord access. Paid tiers are Monthly at €179.99 and Quarterly at €499 — the Quarterly tier includes the live Mentorship. Alpha is reserved for active Mentorship members and is discussed privately once you're inside. All public prices are in euros.",
   },
   {
     q: "What's the difference between the Monthly and Quarterly plans?",
@@ -246,7 +247,7 @@ export const FAQS = [
   },
   {
     q: "What's the difference between Mentorship and Alpha?",
-    a: "Mentorship is the group programme — the Live Trading Floor coached by Mark plus the full course, delivered through the Monthly or Quarterly Club plans. Alpha is the high-touch 1-on-1 programme: direct WhatsApp access, a weekly personal session and a tailored framework, structured as a three-month initial engagement at £1,750. Mentorship is open enrolment; Alpha is application-only.",
+    a: "Mentorship is the group programme — the Live Trading Floor coached by Mark plus the full course, delivered through the Monthly or Quarterly Club plans. Alpha is the high-touch 1-on-1 programme reserved for active Mentorship members — it's offered privately to traders already inside the programme, not advertised externally. Start with Mentorship.",
   },
   {
     q: "I'm a complete beginner — is this for me?",
@@ -266,7 +267,7 @@ export const FAQS = [
   },
   {
     q: "Can I cancel my membership?",
-    a: "Yes. Monthly and quarterly memberships can be cancelled from your account at any time and won't renew at the next billing date. For Alpha, terms are confirmed on the discovery call.",
+    a: "Yes. Monthly and quarterly memberships can be cancelled from your account at any time and won't renew at the next billing date.",
   },
   {
     q: "Is this financial advice?",

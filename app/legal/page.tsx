@@ -90,17 +90,18 @@ export default function LegalPage() {
               <div className="mt-5 space-y-4">
                 <p>
                   We collect the personal data you give us — typically your
-                  name and email address when you opt in to the ORB Playbook,
-                  contact us, or book a call. We use that data to deliver the
-                  content you requested, to send educational follow-ups, and
-                  to respond to your enquiries.
+                  name, email address and WhatsApp number when you opt in to
+                  the ORB Playbook or contact us. We use that data to deliver
+                  the content you requested, to send educational follow-ups,
+                  and to respond to your enquiries.
                 </p>
                 <p>
-                  We rely on third-party processors to run the site: Whop
-                  (membership and payments), Calendly or Google Calendar
-                  (booking), ManyChat (messaging and email automation), and
-                  Meta (advertising and analytics). Each of these processors
-                  is contractually bound to handle your data lawfully.
+                  We rely on third-party processors to run the site:
+                  Cloudflare (hosting, lead database and edge infrastructure),
+                  Whop and Stripe (membership and payments), GoHighLevel
+                  (CRM, email and messaging automation), and Meta (advertising
+                  and analytics). Each of these processors is contractually
+                  bound to handle your data lawfully.
                 </p>
                 <p>
                   You can unsubscribe from emails at any time using the link
